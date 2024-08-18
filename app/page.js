@@ -172,7 +172,7 @@ export default function Home() {
           display: 'inline-block',
           textShadow: '0px 0px 10px rgba(242, 109, 153)', // Pink glow effect behind text
           backgroundColor: 'transparent', // No background color
-        }}>Inventory Manager</Typography>
+        }}>Inventory Tracker</Typography>
 
       <Stack width="800px" height="300px" spacing={2} overflow="auto">
         {
