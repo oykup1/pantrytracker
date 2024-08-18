@@ -84,14 +84,16 @@ export default function Home() {
       }}>
       <Button variant="container"
         sx={{
-          backgroundColor: 'rgba(254, 153, 3, 0.9)', // Black background with 70% opacity
+          backgroundColor: 'rgba(242, 109, 153)', // Black background with 70% opacity
           color: '#fff', // White text color
-          padding: '10px 20px', // Padding around the text
+          padding: '5px 10px', // Padding around the text
           borderRadius: '15px', // Rounded corners
           fontFamily: "'Courier New', sans-serif",
+          textTransform: 'none', // Ensures text is not transformed (keeps it as typed)
+          fontSize: '1rem',
 
           '&:hover': {
-            backgroundColor: 'rgba(254, 153, 3, 0.9)',
+            backgroundColor: 'rgba(242, 109, 153)',
             boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)',// Slightly more opaque on hover
           },
         }}
@@ -105,7 +107,7 @@ export default function Home() {
           left="50%"
           width={400}
 
-          border="2px solid #0000"
+          border="2px solid transparent"
           boxShadow={24}
           p={4}
           display="flex"
@@ -113,7 +115,7 @@ export default function Home() {
           gap={3}
           sx={{
             transform: "translate(-50%,-50%)",
-            backgroundColor: "rgb(242, 109, 153, 0.7)",
+            backgroundColor: "rgb(242, 109, 153, 0.9)",
             color: '#fff',
             padding: '10px 20px', // Padding around the text
             borderRadius: '15px', // Rounded corners
@@ -134,7 +136,17 @@ export default function Home() {
               }}
             />
             <Button
-              variant="outlined"
+              variant="outlined" sx={{
+                marginTop: 2, // Margin to push the button down
+                backgroundColor: 'rgba(254, 153, 3, 0.7)', // Orange color with transparency
+                color: '#fff',
+                '&:hover': {
+                  backgroundColor: 'rgba(254, 153, 3, 0.8)',
+                  border: 'none'
+                },
+                borderRadius: '15px', // Rounded corners
+                border: 'none', // Remove any border
+              }}
               onClick={() => {
                 addItem(itemName)
                 setItemName('')
@@ -152,12 +164,14 @@ export default function Home() {
           position: 'fixed', // Fixes the position of the header
           top: '100px', // Adjusts how high it is on the page
           fontFamily: "'Courier New', sans-serif",
-          fontSize: '2.5rem',
+          fontWeight: 'bold',
+          fontSize: '3rem',
           color: '#fff',
-          backgroundColor: 'rgb(242, 109, 153, 0.9)',
           padding: '10px 20px',
           borderRadius: '15px',
           display: 'inline-block',
+          textShadow: '0px 0px 10px rgba(242, 109, 153)', // Pink glow effect behind text
+          backgroundColor: 'transparent', // No background color
         }}>Inventory Manager</Typography>
 
       <Stack width="800px" height="300px" spacing={2} overflow="auto">
